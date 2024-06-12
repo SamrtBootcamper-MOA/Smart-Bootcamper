@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Bootcamper</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('image.png') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            position: absolute;
+            top: 0;
+            background: lightblue; /* Light blue background */
+            backdrop-filter: blur(10px); /* Glassy effect */
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            color: #f0f0f0; /* White-silver text color */
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.3s;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .menu a:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+        .main-content {
+            text-align: center;
+            color: #f0f0f0; /* White-silver text color */
+        }
+        .main-content h1 {
+            font-size: 120px;
+            margin: 0;
+            animation: wave 2s forwards;
+            color: #f0f0f0; /* White-silver text color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .main-content .slogan {
+            font-size: 40px;
+            margin-top: 20px;
+            opacity: 0;
+            animation: reveal 2s forwards 2s;
+            color: #f0f0f0; /* White-silver text color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .content-section {
+            display: none;
+            width: 60%;
+            padding: 20px;
+            background: rgba(40, 40, 40, 0.8); /* Dark classy background */
+            border-radius: 10px;
+            border: 2px solid #f0f0f0; /* White-silver border */
+            backdrop-filter: blur(10px); /* Glassy effect */
+            text-align: left;
+            color: #f0f0f0; /* White-silver text color */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .content-section.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .bright-link {
+            color: #ffeb3b; /* Bright yellow color */
+            font-weight: bold;
+            text-decoration: underline;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .bright-link:hover {
+            color: #ffffff; /* White color */
+            transform: scale(1.1);
+        }
+        @keyframes wave {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes reveal {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="menu">
+            <a href="#about" onclick="toggleSection(event, 'about')">About</a>
+            <a href="#mission" onclick="toggleSection(event, 'mission')">Mission</a>
+            <a href="#registration" onclick="toggleSection(event, 'registration')">Registration</a>
+            <a href="#contact" onclick="toggleSection(event, 'contact')">Contact</a>
+            <a href="#blog" onclick="toggleSection(event, 'blog')">Blog</a>
+        </div>
+    </div>
+    <div class="main-content" id="mainContent">
+        <h1>Smart Bootcamper</h1>
+        <div class="slogan">Victory loves Preparation</div>
+    </div>
+    <div class="content-section" id="about">
+        <h2>About</h2>
+        <p>Welcome to Smart Bootcamper, where your journey to mastering English and financial acumen begins! Our innovative bootcamp is designed to revolutionize the way you learn and grow. At Smart Bootcamper, we blend dynamic conversation clubs with practical knowledge, creating an engaging environment for you to excel.</p>
+        <p><strong>General and Business English:</strong> Improve your language skills through our interactive conversation clubs. Whether you're looking to enhance your everyday communication or sharpen your business English, our programs are tailored to meet your needs.</p>
+        <p><strong>Financial Knowledge:</strong> Our unique approach integrates financial education with language learning. Gain a deeper understanding of financial products, financial accounting, and financial reporting, all while improving your English proficiency.</p>
+        <p>We believe in holistic development. Our bootcamp doesn't just stop at language and finance. Through our unique learning techniques, you'll also enhance vital soft and hard skills essential for interviews and professional growth. Whether you're a job seeker or a working professional, Smart Bootcamper equips you with the tools to succeed.</p>
+    </div>
+    <div class="content-section" id="mission">
+        <h2>Mission</h2>
+        <p>Our mission is to empower individuals with the knowledge and skills they need to succeed in their careers and personal lives. We aim to create a supportive and engaging learning environment that fosters growth and development.</p>
+    </div>
+    <div class="content-section" id="registration">
+        <h2>Registration</h2>
+        <form action="mailto:smartbootcamper@gmail.com" method="POST" enctype="text/plain">
+            <input type="text" name="firstname" placeholder="First Name" required>
+            <input type="text" name="lastname" placeholder="Last Name" required>
+            <input type="text" name="whatsapp" placeholder="WhatsApp Number" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <div class="content-section" id="contact">
+        <h2>Contact</h2>
+        <p>You can reach us at:</p>
+        <p>Email: smartbootcamper@gmail.com</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Follow us on <a href="https://www.instagram.com/smart.bootcamper.24?igsh=MWZya3BzZnF1bmFyNA==" target="_blank" class="bright-link">Instagram</a> for the latest updates.</p>
+    </div>
+    <div class="content-section" id="blog">
+        <h2>Blog</h2>
+        <p>Welcome to our blog! Here we share insights, tips, and stories to help you on your journey to success.</p>
+        <p>Follow us on <a href="https://www.instagram.com/smart.bootcamper.24?igsh=MWZya3BzZnF1bmFyNA==" target="_blank" class="bright-link">Instagram</a> for the latest updates.</p>
+    </div>
+
+    <script>
+        // Function to toggle visibility of content sections
+        function toggleSection(event, sectionId) {
+            event.preventDefault();
+
+            // Hide all content sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('visible');
+            });
+
+            // Get the target section and main content element
+            const section = document.getElementById(sectionId);
+            const mainContent = document.querySelector('.main-content');
+
+            // Toggle visibility of the target section
+            if (!section.classList.contains('visible')) {
+                section.classList.add('visible');
+                mainContent.style.display = 'none';
+                section.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                section.classList.remove('visible');
+                mainContent.style.display = 'block';
+            }
+        }
+
+        // Event listener to hide content sections when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = event.target.closest('.content-section, .menu a');
+            const mainContent = document.querySelector('.main-content');
+
+            // If click is outside content sections and menu, show main content
+            if (!isClickInside) {
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('visible');
+                });
+                mainContent.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
